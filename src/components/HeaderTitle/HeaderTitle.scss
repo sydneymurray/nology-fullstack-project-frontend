@@ -1,0 +1,13 @@
+@import "../../scss/variables";
+
+.header-title{
+  font-size: calc(5px + 2vmin);
+  &__word{
+    color: white;
+    text-shadow: $header-text-shadow-color $header-text-shadow-px-plus $header-text-shadow-px-plus 0, 
+    $header-text-shadow-color $header-text-shadow-px-minus $header-text-shadow-px-minus 0, 
+    $header-text-shadow-color $header-text-shadow-px-plus $header-text-shadow-px-minus 0, 
+    $header-text-shadow-color $header-text-shadow-px-minus $header-text-shadow-px-plus 0;
+  }
+}
+
