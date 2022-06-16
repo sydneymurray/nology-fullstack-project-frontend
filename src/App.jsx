@@ -6,13 +6,14 @@ import CardContainer from "./containers/CardContainer/CardContainer";
 function App() {
   let [carList, setCarList] = useState()
   let baseURL = process.env.REACT_APP_API_URL
-   console.log(baseURL)
+
+  console.log(baseURL)
+
   useEffect(() => {
     fetch(baseURL + "/cars")
     .then(resp => resp.json())
     .then(cars => setCarList(cars))
-  },
-  [])
+  },[])
 
   return (
     <div className="App">

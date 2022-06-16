@@ -1,0 +1,15 @@
+.car-card{
+    border-radius: 10px;
+    box-shadow: 0 0 1rem 0 rgb(0 0 0 / 20%);
+    object-fit: cover;
+    &__image{
+        width: 225px;
+        object-fit: cover;
+    }
+    &__h2{
+        color: red;
+    }
+}
+
+
+

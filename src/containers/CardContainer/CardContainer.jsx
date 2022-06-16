@@ -7,7 +7,7 @@ const CardContainer = ({carList}) => {
 
   return <>
     <div className="card-container">
-      {carList.map(car => <CarCard car={car}/>)}
+      {carList.map((car, index) => <CarCard car={car} key={index}/>)}
     </div>
   </>
 }

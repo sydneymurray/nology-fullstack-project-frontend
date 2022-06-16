@@ -12,7 +12,7 @@ const Header = () => {
   return <>
     <div className="header-container">
       <HeaderImage source={yellowHotRod} altText="Red Hot Rod"/>
-      <HeaderTitle text="Syd's Hot Rods"/>
+      <HeaderTitle text="Syd's Hot Rod's"/>
       <HeaderImage source={redHotRod} altText="Yellow Hot Rod"/>
     </div>
   </>
