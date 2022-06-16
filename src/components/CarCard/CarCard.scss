@@ -1,13 +1,16 @@
 .car-card{
+    margin-top: 1rem;
     border-radius: 10px;
     box-shadow: 0 0 1rem 0 rgb(0 0 0 / 20%);
-    object-fit: cover;
+    padding: 0.2rem;
     &__image{
-        width: 225px;
-        object-fit: cover;
+        width: 210px;
+        object-fit: scale-down;
     }
-    &__h2{
-        color: red;
+    &__detail-item{
+        text-align: left;
+        margin-left: 2rem;
+        font-size: 0.9rem;
     }
 }
 
