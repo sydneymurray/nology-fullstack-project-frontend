@@ -20,40 +20,53 @@
     grid-gap: 3ch;
     width: 70%;
     border: 1px solid white; 
+    padding-left: 1rem;
+    padding-right: 1rem;
     &__image{
       width: 90%;
     }
+    &__label{
+      text-align: right;
+      font-weight: bold;
+      font-size: 0.8rem;
+    }
+    &__input, &__textarea{
+      font-size: 0.7rem;
+    }
+    &__textarea{
+
+    }
+    &__section1{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 12.5%);
+      margin: 1ch;
+      *{
+        margin-top: 0.1rem;
+        margin-bottom: 0.2rem;
+      }
+    }
+    &__section2{
+      display: grid;
+      grid-template-columns: 20% 80%;
+      margin: 1ch;
+      *{
+        margin-top: 0.1rem;
+        margin-bottom: 0.2rem;
+      }
+    }
+    &__buttons{
+      margin-left: 3%;
+      margin-right: 3%;
+    }
+    &__section3{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 33%);
+      margin: 1ch;
+      *{
+        margin-top: 0.1rem;
+        margin-bottom: 0.2rem;
+      }
+    }
+
   }
   
-/*
-  .pay-modal-container{
-    width: 45ch;
-    display: grid;
-    grid-template:
-    "payment-account-label payment-account-selection" auto
-    "payment-amount-label payment-amount-input" auto
-    "payee-account-label payee-account-input" auto
-    "payment-comments-label payment-comments-input" auto/
-    12ch 25ch;
-    grid-gap: 2ch;
-    margin-left: 4ch;
-    margin-top: 2ch;
-    margin-bottom: 3ch;
-  }
-  
-  .modal-pay-button{
-    padding: 1ch 2ch 1ch 2ch;
-    background-color: rgb(152, 205, 248);
-    border-radius: 1rem;
-    font-weight: bold;
-    width: 20ch;
-    margin-left: auto;
-    margin-right: auto
-  }
-  
-  .modal-pay-button:hover {
-    fill: white;
-    background-color: white;
-  }
-  
-  */
