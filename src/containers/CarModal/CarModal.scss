@@ -9,64 +9,72 @@
     justify-content: center;
     align-items: center;
     padding-bottom: 2ch;
-  }
+}
   
-  .car-modal {
-    position: relative;
-    background-color: rgb(230, 230, 230, 50);
-    background-image: url("../../assets/images/White-Grunge-Wall-Texture2.webp");
-    background-attachment: scroll;
-    border-radius: 10px;
-    grid-gap: 3ch;
-    width: 70%;
-    border: 1px solid white; 
-    padding-left: 1rem;
-    padding-right: 1rem;
-    &__image{
-      width: 90%;
-    }
-    &__label{
-      text-align: right;
-      font-weight: bold;
-      font-size: 0.8rem;
-    }
-    &__input, &__textarea{
-      font-size: 0.7rem;
-    }
-    &__textarea{
-
-    }
-    &__section1{
-      display: grid;
-      grid-template-columns: repeat(auto-fit, 12.5%);
-      margin: 1ch;
-      *{
-        margin-top: 0.1rem;
-        margin-bottom: 0.2rem;
-      }
-    }
-    &__section2{
-      display: grid;
-      grid-template-columns: 20% 80%;
-      margin: 1ch;
-      *{
-        margin-top: 0.1rem;
-        margin-bottom: 0.2rem;
-      }
-    }
-    &__buttons{
-      margin-left: 3%;
-      margin-right: 3%;
-    }
-    &__section3{
-      display: grid;
-      grid-template-columns: repeat(auto-fit, 33%);
-      margin: 1ch;
-      *{
-        margin-top: 0.1rem;
-        margin-bottom: 0.2rem;
-      }
-    }
-
+.car-modal {
+  position: relative;
+  background-color: rgb(230, 230, 230, 50);
+  background-image: url("../../assets/images/White-Grunge-Wall-Texture2.webp");
+  background-attachment: scroll;
+  border-radius: 10px;
+  grid-gap: 3ch;
+  width: 70%;
+  border: 1px solid white; 
+  padding-left: 1rem;
+  padding-right: 1rem;
+  &__image{
+    width: 90%;
+    box-shadow: 0 0 1rem 0 rgb(0 0 0 / 20%);
+    border: 1px solid white;
   }
+  &__label{
+    text-align: right;
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+  &__input, &__textarea{
+    font-size: 0.7rem;
+  }
+  &__textarea{
+  }
+  &__section1{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 12.5%);
+    margin: 1ch;
+    *{
+      margin-top: 0.1rem;
+      margin-bottom: 0.2rem;
+    }
+  }
+  &__section2{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    margin: 1ch;
+    *{
+      margin-top: 0.1rem;
+      margin-bottom: 0.2rem;
+    }
+  }
+  &__buttons{
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+  &__section3{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 33%);
+    margin: 1ch;
+    *{
+      margin-top: 0.1rem;
+      margin-bottom: 0.2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .car-modal__section1{
+    grid-template-columns: repeat(auto-fit, 25%);
+  }  
+}
+
+
   
