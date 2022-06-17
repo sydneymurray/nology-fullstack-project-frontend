@@ -1,12 +1,10 @@
 .header-container{
+    margin: 1rem;
     display: inline-block;
     text-align: center;
     display: flex;
     justify-content: space-evenly;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 1rem 0 rgb(0 0 0 / 30%);
 }
-
-/*
-
-    position: fixed;
-
-*/

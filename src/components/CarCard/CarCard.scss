@@ -1,8 +1,8 @@
 .car-card{
-    margin-top: 1rem;
     border-radius: 10px;
     box-shadow: 0 0 1rem 0 rgb(0 0 0 / 20%);
     padding: 0.2rem;
+    background-color: white;
     &__image{
         width: 210px;
         object-fit: scale-down;

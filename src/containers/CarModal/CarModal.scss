@@ -1,4 +1,4 @@
-.modal-background {
+.car-modal-background {
     position: fixed;
     top: 0;
     left: 0;
@@ -11,28 +11,21 @@
     padding-bottom: 2ch;
   }
   
-  .bg-active {
-    visibility: visible;
-    opacity: 1;
-  }
-  
-  .modal {
+  .car-modal {
     position: relative;
     background-color: rgb(230, 230, 230, 50);
+    background-image: url("../../assets/images/White-Grunge-Wall-Texture2.webp");
+    background-attachment: scroll;
     border-radius: 10px;
-    padding-bottom: 3ch;
-    padding-top: 3ch;
     grid-gap: 3ch;
+    width: 70%;
+    border: 1px solid white; 
+    &__image{
+      width: 90%;
+    }
   }
   
-  .modal-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    width: 4ch;
-  }
-  
+/*
   .pay-modal-container{
     width: 45ch;
     display: grid;
@@ -63,4 +56,4 @@
     background-color: white;
   }
   
-  
+  */
