@@ -11,6 +11,7 @@ const CarModal = ({selectedCar, setSelectedCar, carList, setCarList}) => {
     const updateCar = event =>{
         event.preventDefault()
         let updatedCar = {
+            "carId": carId,
             "manufacturer": event.target.manufacturer.value,
             "model": event.target.model.value,
             "year": event.target.year.value,
@@ -43,7 +44,6 @@ const CarModal = ({selectedCar, setSelectedCar, carList, setCarList}) => {
                 return
             }
             alert(`${updatedCar.manufacturer} ${updatedCar.model} was successfully updated`)
-            updatedCar.carId = carId
             let updatedCarList = carList.map(car => {
                 if (car.carId === carId) return updatedCar
                 return car
@@ -114,7 +114,7 @@ const CarModal = ({selectedCar, setSelectedCar, carList, setCarList}) => {
                     <input type="text" className="car-modal__input" name="mileage" defaultValue={mileage} required/>
                     
                     <label htmlFor="" className="car-modal__label">Lott:</label>
-                    <input type="text" className="car-modal__input" name="carId" defaultValue={carId} required/>
+                    <input type="text" className="car-modal__input" name="carId" value={carId} required/>
                 </div>
                 <div className="car-modal__section2">
                     <label htmlFor="" className="car-modal__label">Wikipedia:</label>
