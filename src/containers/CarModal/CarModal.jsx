@@ -32,7 +32,7 @@ const CarModal = ({selectedCar, setSelectedCar, carList, setCarList}) => {
             "imagesURL": null   
         }
 
-        fetch(APIURL + "car/" + carId,{
+        fetch(APIURL + "/car/" + carId,{
             method:'PUT',
             headers:{'Content-Type': 'Application/json'},
             body: JSON.stringify(updatedCar)
@@ -56,7 +56,7 @@ const CarModal = ({selectedCar, setSelectedCar, carList, setCarList}) => {
     const deleteCar = () => {
         if(!window.confirm("Really Delete " + manufacturer + " " + model + "?")) return
         
-        fetch(APIURL + "car/" + carId,{
+        fetch(APIURL + "/car/" + carId,{
             method:'DELETE'
         })
         alert(manufacturer + " " + model + " has been Deleted!")

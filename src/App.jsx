@@ -12,12 +12,12 @@ function App() {
   let APIURL = process.env.REACT_APP_API_URL
 
   useEffect(() => {
-    fetch(APIURL + "cars")
+    fetch(APIURL + "/cars")
     .then(resp => resp.json())
     .then(cars => setCarList(cars))
   },[])
   
-  
+
   return <>
     <div className="App">
       <Header/>
