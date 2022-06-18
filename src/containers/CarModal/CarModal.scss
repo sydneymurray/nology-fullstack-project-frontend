@@ -36,6 +36,8 @@
     font-size: 0.7rem;
   }
   &__textarea{
+    text-align: left;
+    padding-left: 2rem;;
   }
   &__section1{
     display: grid;
@@ -48,8 +50,7 @@
   }
   &__section2{
     display: grid;
-    //grid-template-columns: 20% 80%;
-    grid-template-columns: 5rem auto;;
+    grid-template-columns: 6rem auto;;
     margin: 1ch;
     *{
       margin-top: 0.1rem;

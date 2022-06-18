@@ -6,29 +6,68 @@ const CarModal = ({selectedCar, setSelectedCar, carList, setCarList}) => {
     let {manufacturer, model, year, colour, registrationState, registrationNumber, vin} = selectedCar  
     let {doors, seats, ownerName, ownerCoNo, price, engineCapacity, modifications} = selectedCar
     let {mileage, wikiURL, videoURL, mainImageURL, imagesURL, carId} = selectedCar  
-    let baseURL = process.env.REACT_APP_API_URL
+    let APIURL = process.env.REACT_APP_API_URL
     
-    const handleSubmit = event =>{
+    const updateCar = event =>{
         event.preventDefault()
-        console.log(event.target)
+        let updatedCar = {
+            "manufacturer": event.target.manufacturer.value,
+            "model": event.target.model.value,
+            "year": event.target.year.value,
+            "colour": event.target.colour.value,
+            "registrationState": event.target.registrationState.value,
+            "registrationNumber": event.target.registrationNumber.value,
+            "vin": event.target.vin.value,
+            "doors": event.target.doors.value,
+            "seats": event.target.seats.value,
+            "ownerName": event.target.ownerName.value,
+            "ownerCoNo": event.target.ownerCoNo.value,
+            "price": event.target.price.value,
+            "engineCapacity": event.target.engineCapacity.value,
+            "modifications": event.target.modifications.value,
+            "mileage": event.target.mileage.value,
+            "wikiURL": event.target.wikiURL.value,
+            "videoURL": event.target.videoURL.value,
+            "mainImageURL": event.target.mainImageURL.value,
+            "imagesURL": null   
+        }
+
+        fetch(APIURL + "car/" + carId,{
+            method:'PUT',
+            headers:{'Content-Type': 'Application/json'},
+            body: JSON.stringify(updatedCar)
+        })
+        .then(response => {
+            if(!response.ok){
+                alert(`An error occurred: ${updatedCar.manufacturer} ${updatedCar.model} was has not been updated!`)
+                return
+            }
+            alert(`${updatedCar.manufacturer} ${updatedCar.model} was successfully updated`)
+            updatedCar.carId = carId
+            let updatedCarList = carList.map(car => {
+                if (car.carId === carId) return updatedCar
+                return car
+            })
+            setSelectedCar(null)
+            setCarList(updatedCarList)
+        })
     }
 
     const deleteCar = () => {
         if(!window.confirm("Really Delete " + manufacturer + " " + model + "?")) return
         
-        fetch(baseURL + "/car/" + carId,{
+        fetch(APIURL + "car/" + carId,{
             method:'DELETE'
         })
         alert(manufacturer + " " + model + " has been Deleted!")
         let updatedCarList = carList.filter(car => car.carId !== carId)
-        console.table(updatedCarList)
         setSelectedCar(null)
         setCarList(updatedCarList)
     }
 
     return <>
         <div className="car-modal-background">
-            <form className="car-modal" onSubmit={handleSubmit}>
+            <form className="car-modal" onSubmit={updateCar}>
                 <h2 className="car-modal__heading">{manufacturer + " " + model}</h2>
                 <img className="car-modal__image" src={mainImageURL} alt={manufacturer + " " + model}/>
                 <div className="car-modal__section1">
@@ -71,11 +110,11 @@ const CarModal = ({selectedCar, setSelectedCar, carList, setCarList}) => {
                     <label htmlFor="" className="car-modal__label">Engine:</label>
                     <input type="text" className="car-modal__input" name="engineCapacity" defaultValue={engineCapacity} required/>
                     
-                    <label htmlFor="" className="car-modal__label">Year:</label>
-                    <input type="text" className="car-modal__input" name="year" defaultValue={year} required/>
-                    
                     <label htmlFor="" className="car-modal__label">Mileage:</label>
                     <input type="text" className="car-modal__input" name="mileage" defaultValue={mileage} required/>
+                    
+                    <label htmlFor="" className="car-modal__label">Lott:</label>
+                    <input type="text" className="car-modal__input" name="carId" defaultValue={carId} required/>
                 </div>
                 <div className="car-modal__section2">
                     <label htmlFor="" className="car-modal__label">Wikipedia:</label>

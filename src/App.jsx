@@ -9,17 +9,16 @@ function App() {
   let [carList, setCarList] = useState()
   let [searchTerm, setSearchTerm] = useState("")
   let [selectedCar, setSelectedCar] = useState(null)
-  let baseURL = process.env.REACT_APP_API_URL
-
-  console.log(baseURL)
+  let APIURL = process.env.REACT_APP_API_URL
 
   useEffect(() => {
-    fetch(baseURL + "/cars")
+    fetch(APIURL + "cars")
     .then(resp => resp.json())
     .then(cars => setCarList(cars))
   },[])
   
-  return (
+  
+  return <>
     <div className="App">
       <Header/>
       <MenuBar setSearchTerm={setSearchTerm}/>
@@ -27,7 +26,7 @@ function App() {
       {selectedCar && <CarModal selectedCar={selectedCar} setSelectedCar={setSelectedCar}
         carList={carList} setCarList={setCarList}/>}
     </div>
-  );
+  </>
 }
 
 export default App;

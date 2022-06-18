@@ -19,7 +19,7 @@ const CardContainer = ({carList, searchTerm, setSelectedCar}) => {
 
   return <>
     <div className="card-container">
-      {filteredCarList.map((car) => <CarCard car={car} key={car.carId} setSelectedCar={setSelectedCar}/>)}
+      {filteredCarList.map((car, index) => <CarCard car={car} key={index} setSelectedCar={setSelectedCar}/>)}
     </div>
   </>
 }
