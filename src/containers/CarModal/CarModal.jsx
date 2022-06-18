@@ -1,79 +1,99 @@
 import React from 'react'
+import CardContainer from '../CardContainer/CardContainer'
 import "./CarModal.scss"
 
-const CarModal = ({selectedCar, setSelectedCar}) => {
+const CarModal = ({selectedCar, setSelectedCar, carList, setCarList}) => {
     let {manufacturer, model, year, colour, registrationState, registrationNumber, vin} = selectedCar  
     let {doors, seats, ownerName, ownerCoNo, price, engineCapacity, modifications} = selectedCar
-    let {mileage, wikiURL, videoURL, mainImageURL, imagesURL} = selectedCar  
-  
+    let {mileage, wikiURL, videoURL, mainImageURL, imagesURL, carId} = selectedCar  
+    let baseURL = process.env.REACT_APP_API_URL
+    
+    const handleSubmit = event =>{
+        event.preventDefault()
+        console.log(event.target)
+    }
+
+    const deleteCar = () => {
+        if(!window.confirm("Really Delete " + manufacturer + " " + model + "?")) return
+        
+        fetch(baseURL + "/car/" + carId,{
+            method:'DELETE'
+        })
+        alert(manufacturer + " " + model + " has been Deleted!")
+        let updatedCarList = carList.filter(car => car.carId !== carId)
+        console.table(updatedCarList)
+        setSelectedCar(null)
+        setCarList(updatedCarList)
+    }
+
     return <>
         <div className="car-modal-background">
-            <form className="car-modal">
+            <form className="car-modal" onSubmit={handleSubmit}>
                 <h2 className="car-modal__heading">{manufacturer + " " + model}</h2>
                 <img className="car-modal__image" src={mainImageURL} alt={manufacturer + " " + model}/>
                 <div className="car-modal__section1">
                     <label htmlFor="" className="car-modal__label">Manufacturer:</label>
-                    <input type="text" className="car-modal__input" name="manufacturer" defaultValue={manufacturer}/>
+                    <input type="text" className="car-modal__input" name="manufacturer" defaultValue={manufacturer} required/>
                     
                     <label htmlFor="" className="car-modal__label">Model:</label>
-                    <input type="text" className="car-modal__input" name="model" value={model}/>
+                    <input type="text" className="car-modal__input" name="model" defaultValue={model} required/>
                     
                     <label htmlFor="" className="car-modal__label">Colour:</label>
-                    <input type="text" className="car-modal__input" name="colour" value={colour}/>
+                    <input type="text" className="car-modal__input" name="colour" defaultValue={colour} required/>
                     
                     <label htmlFor="" className="car-modal__label">Year:</label>
-                    <input type="text" className="car-modal__input" name="year" value={year}/>
+                    <input type="text" className="car-modal__input" name="year" defaultValue={year} required/>
                     
                     <label htmlFor="" className="car-modal__label">Registered:</label>
-                    <input type="text" className="car-modal__input" name="registrationState" value={registrationState}/>
+                    <input type="text" className="car-modal__input" name="registrationState" defaultValue={registrationState} required/>
                     
                     <label htmlFor="" className="car-modal__label">Plate:</label>
-                    <input type="text" className="car-modal__input" name="registrationNumber" value={registrationNumber}/>
+                    <input type="text" className="car-modal__input" name="registrationNumber" defaultValue={registrationNumber} required/>
                     
                     <label htmlFor="" className="car-modal__label">VIN:</label>
-                    <input type="text" className="car-modal__input" name="vin" value={vin}/>
+                    <input type="text" className="car-modal__input" name="vin" defaultValue={vin} required/>
                     
                     <label htmlFor="" className="car-modal__label">Doors:</label>
-                    <input type="text" className="car-modal__input" name="doors" value={doors}/>
+                    <input type="text" className="car-modal__input" name="doors" defaultValue={doors} required/>
                     
                     <label htmlFor="" className="car-modal__label">Seats:</label>
-                    <input type="text" className="car-modal__input" name="seats" value={seats}/>
+                    <input type="text" className="car-modal__input" name="seats" defaultValue={seats} required/>
                     
                     <label htmlFor="" className="car-modal__label">Owner:</label>
-                    <input type="text" className="car-modal__input" name="ownerName" value={ownerName}/>
+                    <input type="text" className="car-modal__input" name="ownerName" defaultValue={ownerName} required/>
                     
                     <label htmlFor="" className="car-modal__label">CoNo:</label>
-                    <input type="text" className="car-modal__input" name="ownerCoNo" value={ownerCoNo}/>
+                    <input type="text" className="car-modal__input" name="ownerCoNo" defaultValue={ownerCoNo} required/>
                     
                     <label htmlFor="" className="car-modal__label">Price:</label>
-                    <input type="text" className="car-modal__input" name="price" value={price}/>
+                    <input type="text" className="car-modal__input" name="price" defaultValue={price} required/>
                     
                     <label htmlFor="" className="car-modal__label">Engine:</label>
-                    <input type="text" className="car-modal__input" name="engineCapacity" value={engineCapacity}/>
+                    <input type="text" className="car-modal__input" name="engineCapacity" defaultValue={engineCapacity} required/>
                     
                     <label htmlFor="" className="car-modal__label">Year:</label>
-                    <input type="text" className="car-modal__input" name="year" value={year}/>
+                    <input type="text" className="car-modal__input" name="year" defaultValue={year} required/>
                     
                     <label htmlFor="" className="car-modal__label">Mileage:</label>
-                    <input type="text" className="car-modal__input" name="mileage" value={mileage}/>
+                    <input type="text" className="car-modal__input" name="mileage" defaultValue={mileage} required/>
                 </div>
                 <div className="car-modal__section2">
                     <label htmlFor="" className="car-modal__label">Wikipedia:</label>
-                    <input type="text" className="car-modal__input" name="wikiURL" value={wikiURL}/>
+                    <input type="text" className="car-modal__input" name="wikiURL" defaultValue={wikiURL} required/>
                     
                     <label htmlFor="" className="car-modal__label">Video:</label>
-                    <input type="text" className="car-modal__input" name="videoURL" value={videoURL}/>
+                    <input type="text" className="car-modal__input" name="videoURL" defaultValue={videoURL} required/>
                     
                     <label htmlFor="" className="car-modal__label">Main Image:</label>
-                    <input type="text" className="car-modal__input" name="mainImageURL" value={mainImageURL}/>
+                    <input type="text" className="car-modal__input" name="mainImageURL" defaultValue={mainImageURL} required/>
 
                     <label htmlFor="" className="car-modal__label">Modifications:</label>
-                    <textarea className="car-modal__textarea" name="modifications" value={modifications} rows="4" cols="50"/>        
+                    <textarea className="car-modal__textarea" name="modifications" defaultValue={modifications} rows="4" cols="50"/>        
                 </div>
                 <div className="car-modal__section3">
-                <button className="car-modal__buttons">C A N C E L</button>
-                <button className="car-modal__buttons">S A V E</button>
-                <button className="car-modal__buttons">D E L E T E</button>
+                    <button type="button" className="car-modal__buttons" onClick={() => setSelectedCar(null)}>C A N C E L</button>
+                    <button type="submit" className="car-modal__buttons">S A V E</button>
+                    <button type="button" className="car-modal__buttons" onClick={() => deleteCar()}>D E L E T E</button>
                 </div>        
             </form>  
         </div>

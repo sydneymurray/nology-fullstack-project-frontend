@@ -24,7 +24,8 @@ function App() {
       <Header/>
       <MenuBar setSearchTerm={setSearchTerm}/>
       <CardContainer carList={carList} searchTerm={searchTerm} setSelectedCar={setSelectedCar}/>
-      {selectedCar && <CarModal selectedCar={selectedCar} setSelectedCar={setSelectedCar}/>}
+      {selectedCar && <CarModal selectedCar={selectedCar} setSelectedCar={setSelectedCar}
+        carList={carList} setCarList={setCarList}/>}
     </div>
   );
 }
