@@ -4,7 +4,7 @@ import "./CarModal.scss"
 const CarModal = ({selectedCar, setSelectedCar, carList, setCarList}) => {
     let {manufacturer, model, year, colour, registrationState, registrationNumber, vin} = selectedCar  
     let {doors, seats, ownerName, ownerCoNo, price, engineCapacity, modifications} = selectedCar
-    let {mileage, wikiURL, videoURL, mainImageURL, imagesURL, carId} = selectedCar  
+    let {mileage, wikiURL, videoURL, mainImageURL, carId} = selectedCar  
     let APIURL = process.env.REACT_APP_API_URL
     
     const handleSubmit = event =>{
