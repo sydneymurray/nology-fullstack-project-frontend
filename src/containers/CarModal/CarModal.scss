@@ -25,9 +25,6 @@
   &__anchor{
     text-decoration: none
   }
-  &__heading{
-    margin-bottom: 0.5rem;
-  }
   .car-wiki{
     display: none
   }
@@ -37,6 +34,7 @@
     object-fit: cover;
     box-shadow: 0 0 1rem 0 rgb(0 0 0 / 20%);
     border: 1px solid white;
+    margin-top: 0.75rem;
   }
   &__label{
     text-align: right;

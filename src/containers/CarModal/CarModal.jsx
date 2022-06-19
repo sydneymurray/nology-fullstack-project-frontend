@@ -99,7 +99,7 @@ const CarModal = ({selectedCar, setSelectedCar, carList, setCarList}) => {
             <form className="car-modal" onSubmit={handleSubmit}>
                 <a className="car-modal__anchor" href={wikiURL} target="_blank">
                     <h2 className="car-modal__heading">
-                        <span className="car-title">{manufacturer + " " + model}</span>
+                        <span className="car-title">{carId ?  manufacturer + " " + model : "Register A Car" }</span>
                         <span className="car-wiki">Wikipedia</span>
                     </h2>
                 </a>
