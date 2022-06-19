@@ -18,12 +18,14 @@
   background-attachment: scroll;
   border-radius: 10px;
   grid-gap: 3ch;
-  width: 70%;
+  //width: 70%;
   border: 5px solid white; 
   padding-left: 1rem;
   padding-right: 1rem;
   &__image{
     width: 90%;
+    max-height: 700px;
+    object-fit: cover;
     box-shadow: 0 0 1rem 0 rgb(0 0 0 / 20%);
     border: 1px solid white;
   }
