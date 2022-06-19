@@ -1,3 +1,4 @@
+
 import React from 'react'
 import "./CarCard.scss"
 
@@ -17,3 +18,4 @@ const CarCard = ({car, setSelectedCar}) => {
 }
 
 export default CarCard
+

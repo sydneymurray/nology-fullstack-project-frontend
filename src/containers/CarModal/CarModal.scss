@@ -22,6 +22,12 @@
   border: 5px solid white; 
   padding-left: 1rem;
   padding-right: 1rem;
+  &__anchor{
+    text-decoration: none
+  }
+  .car-wiki{
+    display: none
+  }
   &__image{
     width: 95%;
     max-height: 700px;
@@ -72,6 +78,17 @@
       margin-bottom: 0.2rem;
     }
   }
+}
+.car-modal__heading:hover{
+  .car-title{
+    display: none;
+  }
+  .car-wiki{
+    display: inline-block;
+  } 
+}
+.car-wiki:hover{
+  display: block 
 }
 
 @media screen and (max-width: 968px) {

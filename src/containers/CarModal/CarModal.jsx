@@ -97,7 +97,12 @@ const CarModal = ({selectedCar, setSelectedCar, carList, setCarList}) => {
     return <>
         <div className="car-modal-background">
             <form className="car-modal" onSubmit={handleSubmit}>
-                <h2 className="car-modal__heading">{manufacturer + " " + model}</h2>
+                <a className="car-modal__anchor" href={wikiURL} target="_blank">
+                    <h2 className="car-modal__heading">
+                        <span className="car-title">{manufacturer + " " + model}</span>
+                        <span className="car-wiki">Wikipedia</span>
+                    </h2>
+                </a>
                 <img className="car-modal__image" src={mainImageURL} alt={manufacturer + " " + model}/>
                 <div className="car-modal__section1">
                     <label htmlFor="" className="car-modal__label">Manufacturer:</label>
@@ -169,3 +174,6 @@ const CarModal = ({selectedCar, setSelectedCar, carList, setCarList}) => {
 }
 
 export default CarModal
+
+
+
