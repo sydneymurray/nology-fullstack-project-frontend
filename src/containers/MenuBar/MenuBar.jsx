@@ -1,5 +1,6 @@
 import React from 'react'
 import "./MenuBar.scss"
+import dummyHotRod from "../../assets/images/hot-rod-silhuette.png"
 
 const MenuBar = ({setSearchTerm, setSelectedCar}) => {
     const handleInput = event => setSearchTerm(event.target.value)
@@ -23,8 +24,8 @@ const MenuBar = ({setSearchTerm, setSelectedCar}) => {
             "mileage": "",
             "wikiURL": "",
             "videoURL": "",
-            "mainImageURL": [],
-            "imagesURL": null   
+            "mainImageURL": dummyHotRod,
+            "imagesURL": []   
         }
     setSelectedCar(newCar)
     }
