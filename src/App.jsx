@@ -4,12 +4,13 @@ import Header from "./containers/Header/Header";
 import CardContainer from "./containers/CardContainer/CardContainer";
 import MenuBar from "./containers/MenuBar/MenuBar";
 import CarModal from "./containers/CarModal/CarModal";
+import Footer from "./containers/Footer/Footer";
 
 function App() {
-  let [carList, setCarList] = useState()
-  let [searchTerm, setSearchTerm] = useState("")
-  let [selectedCar, setSelectedCar] = useState(null)
-  let APIURL = process.env.REACT_APP_API_URL
+  const [carList, setCarList] = useState()
+  const [searchTerm, setSearchTerm] = useState("")
+  const [selectedCar, setSelectedCar] = useState(null)
+  const APIURL = process.env.REACT_APP_API_URL
 
   useEffect(() => {
     fetch(APIURL + "/cars")
@@ -21,10 +22,11 @@ function App() {
   return <>
     <div className="App">
       <Header/>
-      <MenuBar setSearchTerm={setSearchTerm}/>
+      <MenuBar setSearchTerm={setSearchTerm} setSelectedCar={setSelectedCar}/>
       <CardContainer carList={carList} searchTerm={searchTerm} setSelectedCar={setSelectedCar}/>
       {selectedCar && <CarModal selectedCar={selectedCar} setSelectedCar={setSelectedCar}
         carList={carList} setCarList={setCarList}/>}
+      <Footer/>  
     </div>
   </>
 }

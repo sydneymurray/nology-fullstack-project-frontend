@@ -4,5 +4,7 @@
 .App{
     padding-top: 1px;
     background-image: url("./assets/images/Back-Ground-Texture-2.jpg");
-    height: 100vh;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    height: 100%;
 }

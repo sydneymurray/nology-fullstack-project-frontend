@@ -1,0 +1,21 @@
+.Footer{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 1ch;
+    background-color: rgb(240, 240, 240);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;    
+    padding-top: 3ch;
+    padding-bottom: 3ch;
+  }
+  
+  @media screen and (max-width: 530px) {
+    .Footer{
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    .signature {
+      display: none;
+    }
+  }
