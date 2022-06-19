@@ -91,6 +91,10 @@
   display: block 
 }
 
+.car-modal__image:hover{
+  transform: scale(1.05);
+}
+
 @media screen and (max-width: 968px) {
   .car-modal__section1{
     grid-template-columns: repeat(auto-fit, 25%);

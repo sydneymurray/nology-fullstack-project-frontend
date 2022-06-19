@@ -103,7 +103,9 @@ const CarModal = ({selectedCar, setSelectedCar, carList, setCarList}) => {
                         <span className="car-wiki">Wikipedia</span>
                     </h2>
                 </a>
-                <img className="car-modal__image" src={mainImageURL} alt={manufacturer + " " + model}/>
+                <a className="car-modal__youtube" href={videoURL} target="_blank">
+                    <img className="car-modal__image" src={mainImageURL} alt={manufacturer + " " + model}/>
+                </a>
                 <div className="car-modal__section1">
                     <label htmlFor="" className="car-modal__label">Manufacturer:</label>
                     <input type="text" className="car-modal__input" name="manufacturer" defaultValue={manufacturer} required/>
