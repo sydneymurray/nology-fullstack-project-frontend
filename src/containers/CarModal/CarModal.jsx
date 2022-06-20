@@ -97,13 +97,13 @@ const CarModal = ({selectedCar, setSelectedCar, carList, setCarList}) => {
     return <>
         <div className="car-modal-background">
             <form className="car-modal" onSubmit={handleSubmit}>
-                <a className="car-modal__anchor" href={wikiURL} target="_blank">
+                <a className="car-modal__anchor" href={wikiURL} target="_blank" rel="noreferrer">
                     <h2 className="car-modal__heading">
                         <span className="car-title">{carId ?  manufacturer + " " + model : "Register A Car" }</span>
                         <span className="car-wiki">Wikipedia</span>
                     </h2>
                 </a>
-                <a className="car-modal__youtube" href={videoURL} target="_blank">
+                <a className="car-modal__youtube" href={videoURL} target="_blank" rel="noreferrer">
                     <img className="car-modal__image" src={mainImageURL} alt={manufacturer + " " + model}/>
                 </a>
                 <div className="car-modal__section1">
