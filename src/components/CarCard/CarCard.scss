@@ -4,8 +4,10 @@
     padding: 0.2rem;
     background-color: white;
     &__image{
-        width: 210px;
-        object-fit: scale-down;
+        width: 215px;
+        height: 125px;
+        //object-fit: scale-down;
+        object-fit: cover;
     }
     &__detail-item{
         text-align: left;
