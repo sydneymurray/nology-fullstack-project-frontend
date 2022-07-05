@@ -1,0 +1,11 @@
+@import "../../scss/variables";
+
+.progress-bar{
+    width: 90%;
+    height: 30px;
+    background-color: grey;
+    margin: 1rem auto;
+    border-radius: 3px;
+    overflow: hidden,
+}
+

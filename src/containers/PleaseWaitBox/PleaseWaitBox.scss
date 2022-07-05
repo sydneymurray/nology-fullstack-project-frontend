@@ -1,0 +1,13 @@
+@import "../../scss/variables";
+
+.please-wait{
+    max-width: 400px;
+    margin: 2rem auto;
+    border: 3px white solid;
+    background-color: lightgrey;
+    padding: 2rem;
+    border-radius: 5px;
+    &__h2{
+        color: $header-text-shadow-color;
+    }
+}
