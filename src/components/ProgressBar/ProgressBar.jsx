@@ -17,7 +17,6 @@ const ProgressBar = () => {
             height: "100%",
             width: `${fillPercentage}%`,
         }
-        console.log(fillPercentage)
         setStyle(newStyle)
     }
 
