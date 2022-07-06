@@ -23,12 +23,17 @@ function App() {
     return <>
         <div className="App">
             <Header/>
+
             <MenuBar setSearchTerm={setSearchTerm} setSelectedCar={setSelectedCar}/>
+
             {showPleaseWait && <PleaseWaitBox text="Please Wait: Loading..."/>}
+
             <CardContainer carList={carList} searchTerm={searchTerm} setSelectedCar={setSelectedCar}
                 setShowPleaseWait={setShowPleaseWait}/>
+
             {selectedCar && <CarModal selectedCar={selectedCar} setSelectedCar={setSelectedCar}
                 carList={carList} setCarList={setCarList}/>}
+                
             <Footer/>  
         </div>
     </>
