@@ -8,7 +8,7 @@ The Back-End is built on JAVA with the Spring-Boot Frame-Work that connects to S
 and its all hosted on the Google Cloud Platform GCP.
 
 <img src="./public/images/App-Screenshot.png" alt="screenshot of my project" width="600px" height = "auto">
-<br><br>
+<br>
 
 ## How to build this app
 mkdir nology-fullstack-project-frontend \

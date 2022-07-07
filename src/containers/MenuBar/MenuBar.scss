@@ -16,3 +16,12 @@
         padding-right: 1rem;
     }
 }
+
+.menu-bar__add-a-car:hover, .menu-bar__input:hover{
+    background-color: grey;
+    color: white;
+}
+.menu-bar__input:focus{
+    background-color: rgb(250, 211, 211);
+    color: black;
+}
