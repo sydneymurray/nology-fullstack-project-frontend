@@ -3,10 +3,13 @@
 ## About
 A car auction/showroom admin system, where you can add, modify & delete cars as they are sold on. \
 This is a Full-Stack project that I completed as a Nology Consultant. \
-The Front-End is built using JavaScript, React and SCSS, hosted on Netlify. \
+<br>
+The Front-End is built using JavaScript, React and SCSS, hosted at: \
+https://comforting-croquembouche-a5672f.netlify.app/ \
+<br>
 The Back-End is built on JAVA with the Spring-Boot Frame-Work that connects to SQL, \
-and its all hosted on the Google Cloud Platform GCP.
-
+and its all hosted on the Google Cloud Platform GCP. 
+<br> <br>
 <img src="./public/images/App-Screenshot.png" alt="screenshot of my project" width="600px" height = "auto">
 <br>
 
